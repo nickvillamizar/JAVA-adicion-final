@@ -18,5 +18,11 @@ public class ListSEService {
 
     }
 
+    public String add(Kid kid) {
+        list.add(kid);
+        return "kid adicionado exitosamente";
+
+    }
+
 
 }
