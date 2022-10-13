@@ -10,4 +10,7 @@ public class Node {
     public Node(Kid data) {
         this.data = data;
     }
+
+    public void head(Node newNode) {
+    }
 }

@@ -13,8 +13,9 @@ public class ListSEService {
 
     public ListSEService() {
         list = new ListSE();
-        list.add(new Kid("1002654940","Jeronimo Murillo",(byte)19,'M'));
-        list.add(new Kid("34344343","Pedro Pérez",(byte)16,'M'));
+        list.add(new Kid("1002654940", "Jeronimo Murillo", (byte) 19, 'M'));
+        list.add(new Kid("34344343", "Pedro Pérez", (byte) 16, 'M'));
+        list.add(new Kid("4545488","Rosa perez",(byte)19, 'F'));
 
     }
 
@@ -25,4 +26,27 @@ public class ListSEService {
     }
 
 
+    public String addFirst(Kid kid)
+    { list.addFirst(kid);
+        return "el niño se añadio al incio";}
+    public String AddFinal(Kid kid){
+        list.addFinal(kid);
+        return "el niño se añadio al final";
+
+    }
+    public  String girlsFirst(Kid kid){
+        list.girlsFirst(kid);
+        return "se añadieron las niñas al inicio";
+    }
+    public String invert(Kid kid){
+        list.invert(kid);
+        return "lista invertida";
+    }
+    public  String deletePosition(Kid kid){
+        list.invert(kid);
+        return "posicion eliminada";}
+    public  String count(Kid kid){
+        list.invert(kid);
+        return "lista recorrida";}
 }
+
