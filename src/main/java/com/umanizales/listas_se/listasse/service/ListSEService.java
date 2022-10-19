@@ -1,7 +1,9 @@
 package com.umanizales.listas_se.listasse.service;
 
 import com.umanizales.listas_se.listasse.model.Kid;
+import com.umanizales.listas_se.listasse.model.KidByPositionDTO;
 import com.umanizales.listas_se.listasse.model.ListSE;
+
 
 import lombok.Data;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,7 @@ public class ListSEService {
 
     public String add(Kid kid) {
         list.add(kid);
-        return "kid adicionado exitosamente";
+        return "kid adicionado exitosamente";  ///se retorna mensaje
 
     }
 
@@ -31,22 +33,38 @@ public class ListSEService {
         return "el niño se añadio al incio";}
     public String AddFinal(Kid kid){
         list.addFinal(kid);
-        return "el niño se añadio al final";
+        return "el niño se añadio al final"; ///se retorna mensaje
 
     }
-    public  String girlsFirst(Kid kid){
-        list.girlsFirst(kid);
-        return "se añadieron las niñas al inicio";
-    }
-    public String invert(Kid kid){
-        list.invert(kid);
+
+    public String invert(){
+        list.invert();
         return "lista invertida";
     }
-    public  String deletePosition(Kid kid){
-        list.invert(kid);
+    public  String deletePosition(){
+        list.invert();
         return "posicion eliminada";}
     public  String count(Kid kid){
-        list.invert(kid);
+        list.invert();
         return "lista recorrida";}
-}
+    public String addByPosition(KidByPositionDTO kidByPositionDTO){
+        if(kidByPositionDTO.getPosition()>0
+                && kidByPositionDTO.getPosition() <= (list.getSize()+1))
+        {
+            list.addByPosition(kidByPositionDTO.getPosition(),
+                    kidByPositionDTO.getKid());
+            return "Adicionado exitosamente";
+        }
+        else {
+            return "Posición no permitida"; ///se retorna mensaje
+        }
 
+        }
+    public String girlsFirst()
+    {
+        list.girlsFirst();
+        return "Se ha ejecutado la mezcla"; ///se retorna mensaje
+    }
+
+
+    }

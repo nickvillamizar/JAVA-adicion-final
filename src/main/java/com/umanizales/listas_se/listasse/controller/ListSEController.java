@@ -18,7 +18,7 @@ public class ListSEController {
         return listSEService.getList().getHead();
     }
 
-   @PostMapping(path = "addKid")
+    @PostMapping(path = "addKid")
     public String addKId(@RequestBody Kid kid)
     {
         return listSEService.add(kid);
@@ -27,15 +27,22 @@ public class ListSEController {
     public String addFirst(@RequestBody Kid kid){return listSEService.addFirst(kid);}
     @PostMapping(path = "addEnd")
     public String addEnd(@RequestBody Kid kid){return listSEService.AddFinal(kid);}
-    @GetMapping(path = "girlsFisrt")
-    public  String girlsFirst(@RequestBody Kid kid){return listSEService.girlsFirst(kid);}
+    @GetMapping(path = "/girlsFirst")
+    public String girlsFirst()
+    {
+        return listSEService.girlsFirst();
+    }
 
-    @GetMapping  (path = "invert")
-    public String invert(@RequestBody Kid kid){return  listSEService.invert(kid);}
+
+    @GetMapping(path="/invert")
+    public String invert() {
+        return listSEService.invert();
+    }
     @PostMapping(path = "deleteposition")
-    public String deletePosition(@RequestBody Kid kid){return  listSEService.deletePosition(kid);}
-    @GetMapping (path = "count")
+    public String deletePosition(@RequestBody Kid kid){return  listSEService.deletePosition();}
+    @GetMapping(path = "count")
     public String count(@RequestBody Kid kid){return  listSEService.count(kid);}
 }
+
 
 
